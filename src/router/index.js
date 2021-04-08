@@ -943,7 +943,7 @@ function configRoutes () {
         {
           path: 'login',
           name: 'Login',
-          component: Login
+          component: Login // only trick method to show create appiontment page the correct component is Login
         },
         {
           path: 'register',
