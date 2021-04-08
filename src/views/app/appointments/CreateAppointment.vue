@@ -29,32 +29,37 @@
   </CRow> -->
   <div>
 
-    <!-- filter button -->
+    <!-- filter -->
     <!-- start -->
     <div class="filter-con">
+      <input type="text" placeholder="Enter doctor name ...">
       <button>Filter</button>
     </div>
-    <!-- end -->
-
-    <!-- filter page -->
     <!-- start -->
-    <div>
 
-    </div>
-    <!-- end -->
-
-    <!-- appointments container -->
+    <!-- appiontments cards -->
     <!-- start -->
     <div class="appointments-con">
-      <div class="appoi-card" v-for="num in nums" :key="num">
-        <ul class="appoi-info">
-          <li class="item"><span class="title">Doctor: </span><span class="info">Bohame Namero</span></li>
-          <li class="item"><span class="title">Specialist: </span><span class="info">Diagnoses</span></li>
-          <li class="item"><span class="title">Location: </span><span class="info">Karofr</span></li>
-          <li class="item"><span class="title">Date: </span><span class="info">1/1/2012</span></li>
-        </ul>
-        <div class="create-appoi">
-          <button>Create</button>
+      <div class="appointment-card" v-for="num in nums" :key="num">
+        <div class="top-side">
+          <div class="left-side">
+            <div class="img-con">
+              <img src="img/avatars/6.jpg" alt="avatar">
+            </div>
+            <div class="img-info">
+              <h4>Ahmed Zaki</h4>
+              <h5><small>nose and ear specialist</small></h5>
+              <span>Egypt . Cairo . Nasr City</span><br>
+              <small>11/12/2020</small>
+            </div>
+          </div>
+          <div class="right-side">
+            <span>11:30:00</span>
+          </div>
+        </div>
+        <div class="bottom-side">
+          <span>See Doctor</span>
+          <button>Book</button>
         </div>
       </div>
     </div>
@@ -148,93 +153,122 @@ export default {
 
 <style lang="scss" scoped>
 
-//== filter button style ==//
+//== filter style ==//
 //== start ==//
 .filter-con{
-  margin-top: 20px;
-  margin-left: 20px;
-   button{
-     background-color: rgba(56, 56, 243, 0.801);
-     color: white ;
-     border: none;
-     outline: none;
-     padding: 10px;
-     width: 150px;
-     border-radius: 6.5px;
-   }
-}
-//== end ==//
-
-//== appointment crads style ==//
-//== start ==//
-.appointments-con{
-  width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
-  margin-top: 20px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  overflow: hidden;
-  justify-content: center;
-  .appoi-card{
-    background-color: white;
-    border: 1px solid rgba(204, 203, 203, 0.63);
-    min-width: 24.35%;
-    height: 150px;
-    border-radius: 6.5px;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    //== appointment info style ==//
-    //== start ==//
-    .appoi-info{
-      list-style-type: circle;
-      list-style: rgba(56, 56, 243, 0.801);
-      .item{
-        .title{
-          color: rgba(56, 56, 243, 0.801);
-          letter-spacing: 1.2px;
-          margin-right: 5px;
-        }
-        &::marker{
-          color: rgba(56, 56, 243, 0.801);
-        }
-      }
+  justify-content: space-between;
+  input{
+    border: none;
+    outline: none;
+    border-radius: 0 5px 0 5px;
+    width: 350px;
+    padding-left: 15px;
+    font-size: 15px;
+    padding: 12px;
+  }
+  button{
+    background-color: #3C4B64;
+    color: White;
+    padding: 10px;
+    border: none;
+    outline: none;
+    width: 120px;
+    border-radius: 0 5px 0 5px;
+    cursor: pointer;
+    &:hover{
+          transition: all 0.3s;
+          opacity: 0.8;
     }
-    //== end ==//
-
-    //== create appiontment btn style ==//
-    //== start ==//
-    .create-appoi{
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-        button{
-        background-color: rgba(56, 56, 243, 0.801);
-        color: white ;
-        border: none;
-        outline: none;
-        padding: 10px;
-        border-radius: 6.5px;
-      }
-    }
-    //== end ==//
-
   }
 }
 //== end ==//
 
-//== appointment contanier media ==//
+//== apointments card style ==//
 //== start ==//
-@media screen and (max-width: 1290px){
-  
+.appointments-con{
+  margin-top: 25px;
+  .appointment-card{
+    background-color: white;
+    border-radius: 12px;
+    padding: 21px;
+    box-shadow: 7px 14px 16px -15px grey;
+    margin-bottom: 20px;
+    .top-side{
+      display: flex;
+      justify-content: space-between;
+      .left-side{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .img-con{
+          width: 100px;
+          margin-right: 20px;
+          img{
+            width: 100%;
+          }
+        }
+        .img-info{
+          h4{
+            margin: 0;
+            font-size: 20px;
+          }
+          h5{
+            margin: 0;
+            margin-bottom: 10px;
+            color: #ccc;
+            font-weight: 500;
+            text-transform: capitalize;
+          }
+          span{
+            margin: 0;
+            color: rgb(71, 94, 114);
+            font-size: 12px;
+            text-transform: capitalize;
+          }
+        }
+      }
+      .right-side{
+        span{
+          font-size: 17px;
+          font-weight: 500;
+          color: #3C4B64;
+        }
+      }
+    }
+    .bottom-side{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span{
+        color: #ccc;
+        cursor: pointer;
+        font-weight: 500;
+        margin-top: 10px;
+        &:hover{
+          transition: all 0.3s;
+          color: #2052a8;
+        }
+        
+      }
+      button{
+        background-color: #3C4B64;
+        color: White;
+        padding: 10px;
+        border: none;
+        outline: none;
+        width: 120px;
+        border-radius: 0 5px 0 5px;
+        cursor: pointer;
+        text-transform: uppercase;
+        &:hover{
+          transition: all 0.3s;
+          opacity: 0.8;
+        }
+      }
+    }
+  }
 }
 //== end ==//
-
 
 </style>
