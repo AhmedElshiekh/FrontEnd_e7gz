@@ -1,18 +1,25 @@
 <template>
   <CSidebar 
+  class="bgSlider"
     fixed 
     :minimize="minimize"
     :show="show"
     @update:show="(value) => $store.commit('set', ['sidebarShow', value])"
   >
     <CSidebarBrand class="d-md-down-none" to="/">
-      <CIcon 
+      <!-- <CIcon 
         class="d-block" 
         name="logo" 
         size="custom-size" 
         :height="35" 
         :viewBox="`0 0 ${minimize ? 110 : 556} 134`"
-      />
+      /> -->
+      <div class="">
+          <img
+            src="img/brand/logo.png"
+            class="c-avatar-img "
+          />
+        </div>
     </CSidebarBrand>
     <CRenderFunction flat :content-to-render="nav"/>
     <CSidebarMinimizer
@@ -135,3 +142,15 @@ export default {
   }
 }
 </script>
+<style>
+  .c-sidebar .c-sidebar-nav-link:hover, .c-sidebar .c-sidebar-nav-dropdown-toggle:hover {
+    color: #fff;
+    background: #24acf0;
+  }
+</style>
+// <style lang="scss" scoped>
+
+// .bgSlider{
+//   background-color: black;
+// }
+// </style>

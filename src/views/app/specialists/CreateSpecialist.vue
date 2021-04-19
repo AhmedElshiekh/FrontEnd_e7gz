@@ -14,7 +14,12 @@
             ({{dismissCountDown}}) {{ message }}
           </CAlert>
 
-          <CInput label="Name" type="text" placeholder="Name" v-model="specialist.name"></CInput>
+          <CInput label="Name" type="text" placeholder="Name" v-model="specialist.name">
+            <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </CInput>
           <CInput label="description" type="text" placeholder="description" v-model="specialist.description"></CInput>
 
           <CButton color="primary" @click="store()">Create</CButton>

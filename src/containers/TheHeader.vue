@@ -22,11 +22,11 @@
           <CIcon name="cil-bell"/>
         </CHeaderNavLink>
       </CHeaderNavItem>
-      <CHeaderNavItem class="d-md-down-none mx-2">
+      <!-- <CHeaderNavItem class="d-md-down-none mx-2">
         <CHeaderNavLink>
           <CIcon name="cil-list"/>
         </CHeaderNavLink>
-      </CHeaderNavItem>
+      </CHeaderNavItem> -->
       <CHeaderNavItem class="d-md-down-none mx-2">
         <CHeaderNavLink>
           <CIcon name="cil-envelope-open"/>

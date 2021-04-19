@@ -40,12 +40,12 @@
             </template> -->
             <template #edit="{item}">
               <td>
-                <CButton color="primary" @click="editSpecialist( item.key )">Edit</CButton>
+                <CButton class="btn-sm" color="primary" @click="editSpecialist( item.key )">Edit</CButton>
               </td>
             </template>
             <template #delete="{item}">
               <td>
-                <CButton v-if="item.key" color="danger" @click="deleteSpecialist( item.key )">Delete</CButton>
+                <CButton class="btn-sm" v-if="item.key" color="danger" @click="deleteSpecialist( item.key )">Delete</CButton>
               </td>
             </template>
           </CDataTable>

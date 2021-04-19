@@ -30,17 +30,17 @@
           </template>
           <template #show="{item}">
             <td>
-              <CButton color="primary" @click="showAdmin( item.key )">Show</CButton>
+              <CButton class="btn-sm" color="primary" @click="showAdmin( item.key )">Show</CButton>
             </td>
           </template>
           <template #edit="{item}">
             <td>
-              <CButton color="primary" @click="editAdmin( item.key )">Edit</CButton>
+              <CButton class="btn-sm" color="primary" @click="editAdmin( item.key )">Edit</CButton>
             </td>
           </template>
           <template #delete="{item}">
             <td>
-              <CButton v-if="you!=item.key" color="danger" @click="deleteAdmin( item.key )">Delete</CButton>
+              <CButton class="btn-sm" v-if="you!=item.key" color="danger" @click="deleteAdmin( item.key )">Delete</CButton>
             </td>
           </template>
         </CDataTable>

@@ -8,12 +8,14 @@ import store from './store'
 import algoliasearch from 'algoliasearch/lite';
 import InstantSearch from 'vue-instantsearch';
 
+
 // window.algoliasearch = algoliasearch;
 // Vue.use(InstantSearch);
 
 // Vue.prototype.$apiAdress = 'https://api.aisent.net'
-// Vue.prototype.$apiAdress = 'http://e7gz.aisent'
-Vue.prototype.$apiAdress = 'http://api.dojaa.com'
+Vue.prototype.$apiAdress = 'http://e7gz.aisent'
+// Vue.prototype.$apiAdress = 'http://api.dojaa.com'
+
 Vue.config.performance = true
 Vue.use(CoreuiVue)
 

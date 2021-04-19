@@ -137,7 +137,6 @@ export default {
     },
     deleteAppointment ( key ) {
       let self = this;
-      let appointmentId = key;
       axios.post(  this.$apiAdress + '/api/appointments/' + key + '?token=' + localStorage.getItem("api_token"), {
         _method: 'DELETE'
       })
@@ -171,11 +170,11 @@ export default {
         console.log(error);
       });
     },
-    //  intervalFetchData () {
-    //   setInterval(() => {    
-    //     this.getAppointments();
-    //   }, 4000);    
-    // },
+     intervalFetchData () {
+      setInterval(() => {    
+        this.getAppointments();
+      }, 4000);    
+    },
   },
   mounted: function(){
     this.getAppointments();

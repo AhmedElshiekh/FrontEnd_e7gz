@@ -30,14 +30,14 @@
             <td>
               <CBadge :color="getBadge(item.status)">{{ item.status }}</CBadge>
             </td>
-            <td class="py-2">
-              <CButton color="primary" variant="outline" @click="showDoctor( item.key )">Show</CButton>
+            <td >
+              <CButton class="btn-sm" color="primary" variant="outline" @click="showDoctor( item.key )">Show</CButton>
             </td>
             <td>
-              <CButton color="primary" @click="editDoctor( item.key )">Edit</CButton>
+              <CButton  class="btn-sm" color="primary" @click="editDoctor( item.key )">Edit</CButton>
             </td>
             <td>
-              <CButton v-if="you!=item.key" color="danger" @click="deleteDoctor( item.key )">Delete</CButton>
+              <CButton class="btn-sm" v-if="you!=item.key" color="danger" @click="deleteDoctor( item.key )">Delete</CButton>
             </td>
           </template>
         </CDataTable>
