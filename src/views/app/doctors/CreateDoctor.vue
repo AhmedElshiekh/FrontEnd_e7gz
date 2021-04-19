@@ -44,6 +44,7 @@
             </div>
           </CRow>
           <CRow>
+            <CInput class="col-4" label="address" type="text" placeholder="" v-model="doctor.address"></CInput>
             <div class="cal-4"> 
               <label for="" >Governate </label><br>
               <select name="" id="governorates" @change="selectCity($event.target.selectedIndex)">
@@ -58,7 +59,6 @@
                 <option :value="city.name" v-for="city in cities" :key="city.key">{{ city.name }}</option>
               </select>
             </div>
-            <CInput class="col-4" label="address" type="text" placeholder="" v-model="doctor.address"></CInput>
           </CRow>
 
           <CRow>

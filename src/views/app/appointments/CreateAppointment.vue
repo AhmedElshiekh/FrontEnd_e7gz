@@ -32,7 +32,7 @@
     <!-- filter -->
     <!-- start -->
     <div class="filter-con">
-      <input type="text" v-model="keyword" @input="searchDoc" placeholder="Enter doctor name ...">
+      <input type="text" v-model="keyword" @input="searchDoc" style="border-radius: 15px;" placeholder="Enter doctor name ...">
       <!-- <button @click="openFilterBox()">Filter</button> -->
     </div>
     <!-- start -->
@@ -68,9 +68,9 @@
       <div class="filter-group">
         <h5>Date</h5>
       <label for=""></label>
-      <input type="date" name="" id="date">
-      </div>
+       <input style="border-radius: 10px; border: none; padding: 4px;" type="date" name="" id="date">
       <button @click="makeFilter()">Filter</button>
+      </div>
     </div>
     <!-- end -->
 
@@ -88,14 +88,15 @@
               <h5><small>{{appoi.department?specailists[appoi.department].name:"no specailist"}}</small></h5>
               <span>{{ appoi.country }} . {{appoi.governorate}} . {{ appoi.city }}</span><br>
               <small>{{ appoi.address }}</small>
+            <span style="color: #cc0000">{{ appoi.timeFrom }} </span>
             </div>
           </div>
-          <div class="right-side">
-            <span>{{ appoi.timeFrom }} </span>
+          <div class="right-side position-relative">
+            <button style="margin-top: 2.5rem;">See Doctor</button>
           </div>
         </div>
         <div class="bottom-side">
-          <span>See Doctor</span>
+          <span></span>
           <button>Book</button>
         </div>
       </div>
@@ -272,14 +273,6 @@ export default {
     this.catchTodayData();
     ///== end ==//
 
-    // let self = this;
-    // axios.get(  this.$apiAdress + '/api/appointments/create?token=' + localStorage.getItem("api_token"))
-    // .then(function (response) {
-    //     self.statuses = response.data.data;
-    // }).catch(function (error) {
-    //     console.log(error);
-    //     self.$router.push({ path: 'login' });
-    // });
   }
 }
 

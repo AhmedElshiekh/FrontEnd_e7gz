@@ -59,7 +59,7 @@ export default {
   data: () => {
     return {
       items: [],
-      fields: ['key', 'name', 'email', 'phone', 'status', 'show', 'edit', 'delete'],
+      fields: ['key', 'name', 'email', 'phone', 'show', 'edit', 'delete'],
       currentPage: 1,
       perPage: 5,
       totalRows: 0,
@@ -85,7 +85,7 @@ export default {
             : status === 'Banned' ? 'danger' : 'primary'
     },
     callCenterLink (key) {
-      return `callCenters/${key.toString()}`
+      return `callCenters/${key.toString()}/show`
     },
     editLink (key) {
       return `callCenters/${key.toString()}/edit`

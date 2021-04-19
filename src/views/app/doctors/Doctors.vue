@@ -58,7 +58,7 @@ export default {
       items: [],
       fields: ['key', 'name', 'email', 'phone', 'department', 'status'],
       currentPage: 1,
-      perPage: 5,
+      perPage: 10,
       totalRows: 0,
       you: null,
       message: '',

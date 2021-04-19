@@ -1,10 +1,10 @@
 <template>
   <CRow>
     <CCol col="12" >
-      <CCard no-header>
-        <CCardBody>
+      <CCard no-header id="head">
+        <CCardBody >
           <CForm>
-            <template slot="header">
+            <template slot="header" >
               Edit Doctor key:  {{ $route.params.id }}
             </template>
             <CAlert
@@ -160,6 +160,8 @@ export default {
       // this.$router.replace({path: '/Doctors'})
     },
     update() {
+        var selectedGover = document.getElementById("governorates").value;
+        var selectedCity  = document.getElementById("cities").value;
         let self = this;
         axios.post(  this.$apiAdress + '/api/doctors/' + self.$route.params.id + '?token=' + localStorage.getItem("api_token"),
         {
@@ -172,9 +174,9 @@ export default {
             ID_number: self.doctor.ID_number,
             nationality: self.doctor.nationality,
             bankAccount: self.doctor.bankAccount,
-            country: self.doctor.country,
-            governorate: self.doctor.governorate,
-            city: self.doctor.city,
+            governorate: selectedGover,
+            city: selectedCity,
+            country: 'مصر',
             department: self.doctor.department,
             sessionLength: self.doctor.sessionLength,
             minPatient: self.doctor.minPatient,
@@ -184,6 +186,7 @@ export default {
         })
         .then(function (response) {
             self.message = 'Successfully updated Doctor.';
+            document.getElementById('head').scrollIntoView();
             self.showAlert();
         }).catch(function (error) {
             self.msgError = '';

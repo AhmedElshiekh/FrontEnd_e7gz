@@ -343,6 +343,12 @@ function configRoutes () {
               
             },
             {
+              path: ':id/show',
+              meta: { label: 'CallCenter Details'},
+              name: 'CallCenter',
+              component: CallCenter,
+            },
+            {
               path: ':id/edit',
               meta: { label: 'Edit Admin' },
               name: 'Edit Admin',
@@ -372,6 +378,12 @@ function configRoutes () {
             },
             {
               path: ':id',
+              meta: { label: 'CallCenter Details'},
+              name: 'CallCenter',
+              component: CallCenter,
+            },
+            {
+              path: ':id/show',
               meta: { label: 'CallCenter Details'},
               name: 'CallCenter',
               component: CallCenter,

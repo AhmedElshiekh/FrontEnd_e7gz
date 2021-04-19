@@ -3,7 +3,7 @@
     <CCol col="12" lg="6">
       <CCard>
         <CCardHeader>
-          CallCenter key:  {{ $route.params.key }}
+          CallCenter key:  {{ $route.params.id }}
         </CCardHeader>
         <CCardBody>
           <CDataTable 
@@ -19,7 +19,7 @@
           </CDataTable>  
         </CCardBody>
         <CCardFooter>
-          <CButton color="dark float-right" @click="goBack">Back</CButton>
+          <CButton color="primary" @click="goBack">Back</CButton>
         </CCardFooter>
       </CCard>
     </CCol>
@@ -29,7 +29,7 @@
 <script>
 import axios from 'axios'
 export default {
-  name: 'Doctory',
+  name: 'CallCentery',
   data: () => {
     return {
       items: [],
@@ -51,13 +51,13 @@ export default {
   },
   mounted: function(){
     let self = this;
-    axios.get(  this.$apiAdress + '/api/callCenters/' + self.$route.params.key + '?token=' + localStorage.getItem("api_token"))
+    axios.get(  this.$apiAdress + '/api/callCenters/' + self.$route.params.id + '?token=' + localStorage.getItem("api_token"))
     .then(function (response) {
       const items = Object.entries(response.data.data);
       self.items = items.map(([key, value]) => {return {key: key, value: value}});
     }).catch(function (error) {
       console.log(error);
-      self.$router.push({ path: '/login' });
+      // self.$router.push({ path: '/login' });
     });
   }
 }
